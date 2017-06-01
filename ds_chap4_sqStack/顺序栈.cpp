@@ -12,14 +12,14 @@ struct Stack
 };
 typedef Stack SqStack;
 
-int InitStack(SqStack *s)
+int InitStack(SqStack **s)
 {
-	s = (SqStack*)malloc(sizeof(SqStack));
-	if (s == NULL)
+	*s = (SqStack*)malloc(sizeof(SqStack));
+	if (*s == NULL)
 	{
 		return ERROR;
 	}
-	s->top = -1;
+	(*s)->top = -1;
 	return OK;
 }
 
@@ -107,7 +107,7 @@ int main(int, char**)
 		{
 		case 1:
 		{
-			InitStack(s);
+			InitStack(&s);
 			break;
 		}
 		case 2:
