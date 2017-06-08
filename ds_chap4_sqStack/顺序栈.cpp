@@ -81,7 +81,8 @@ int Pop(SqStack* s, int *e)
 
 int PrintStack(SqStack* s)
 {
-	for (int i = 0; i < s->top; i++)
+	printf("stack:\t");
+	for (int i = 0; i <= s->top; i++)
 	{
 		printf("%d ", s->elem[i]);
 	}
@@ -122,6 +123,8 @@ int main(int, char**)
 		{
 			printf("Please input push element.\n");
 			scanf("%d", &e);
+			Push(s, e);
+			break;
 		}
 		case 4:
 		{
